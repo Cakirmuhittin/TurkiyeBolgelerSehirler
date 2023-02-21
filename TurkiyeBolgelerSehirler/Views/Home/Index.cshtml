@@ -1,0 +1,38 @@
+﻿@model List<Bolge>
+@*@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<h2>@UrlUtilities.URLFriendly("Akdeniz Bölgesi")</h2>
+<h2>@UrlUtilities.URLFriendly("Iğdır")</h2>
+<h2>@UrlUtilities.URLFriendly("Iğdır")</h2>
+*@
+
+@{
+    ViewBag.Title = "Bolgeler";
+}
+
+<h1>Bolgeler</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>BolgeAd</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="BolgeBilgi" asp-route-slug="@item.Slug">@item.BolgeAd</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

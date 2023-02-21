@@ -1,0 +1,26 @@
+﻿@model List<Sehir>
+
+@{
+    ViewBag.Title = "Sehirler";
+}
+
+<h1>Sehirler</h1>
+
+<table class="table">
+    <thead>
+        <tr>         
+            <th>SehirAd</th>        
+              
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>             
+                <td>
+                    <a asp-action="SehirBilgi" asp-route-slug="@item.Slug">@item.SehirAd</a>
+                </td>                
+            </tr>
+        }
+    </tbody>
+</table>

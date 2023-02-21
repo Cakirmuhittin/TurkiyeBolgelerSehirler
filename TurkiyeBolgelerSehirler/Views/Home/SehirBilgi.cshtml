@@ -1,0 +1,15 @@
+﻿@model Sehir
+
+@{
+    ViewBag.Title = "Sehir Özellik";
+}
+
+<h1>@Model.SehirAd</h1>
+
+<dl>
+    <dt>Plaka</dt>
+    <dd>@Model.Id.ToString()</dd>
+    <dt>Nüfusu</dt>
+    <dd>@Model.Nufus.ToString()</dd>  
+</dl>
+
